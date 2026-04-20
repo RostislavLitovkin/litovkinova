@@ -95,6 +95,17 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Quality & Experience Requirements *(mandatory)*
+
+- **QR-001**: The implementation MUST define how code quality is validated (linting, formatting,
+  automated tests) for this feature.
+- **QR-002**: The implementation MUST identify reusable existing modules/components and justify
+  any newly introduced duplicate logic.
+- **QR-003**: User-facing behavior MUST define consistent UX states for loading, empty, success,
+  and error scenarios.
+- **QR-004**: User-facing behavior MUST include explicit acceptance coverage for both mobile and
+  desktop viewport classes.
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]

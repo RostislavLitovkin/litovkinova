@@ -1,50 +1,87 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: 0.0.0-template -> 1.0.0
+- Modified principles:
+	- [PRINCIPLE_1_NAME] -> I. Code Quality Is Non-Negotiable
+	- [PRINCIPLE_2_NAME] -> II. Reuse Before Rewrite
+	- [PRINCIPLE_3_NAME] -> III. UX Consistency By Design
+	- [PRINCIPLE_4_NAME] -> IV. Responsive By Default
+	- [PRINCIPLE_5_NAME] -> V. Verifiable Delivery Gates
+- Added sections:
+	- Implementation Standards
+	- Delivery Workflow & Quality Gates
+- Removed sections:
+	- None
+- Templates requiring updates:
+	- ✅ updated: .specify/templates/plan-template.md
+	- ✅ updated: .specify/templates/spec-template.md
+	- ✅ updated: .specify/templates/tasks-template.md
+	- ✅ verified no command templates present: .specify/templates/commands/*.md
+- Follow-up TODOs:
+	- None
+-->
+
+# Litovkinova Web Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Code Quality Is Non-Negotiable
+All production code MUST pass automated linting, formatting, and test checks before merge. Every
+change MUST preserve readability through clear naming, small composable units, and explicit error
+handling for failure paths. Pull requests MUST include tests for new behavior and regression tests
+for defects. Rationale: high quality code reduces defects, rework, and onboarding cost.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Reuse Before Rewrite
+Teams MUST prefer existing components, utilities, and patterns before introducing new abstractions.
+When duplication is introduced, follow-up extraction MUST be planned in the same feature scope or
+explicitly justified in the plan. New shared code MUST be documented with usage boundaries and
+extension points. Rationale: disciplined reuse lowers maintenance burden and keeps behavior
+consistent.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. UX Consistency By Design
+User flows, terminology, feedback states, and interaction patterns MUST remain consistent across
+the product. Features MUST use shared design tokens/components where available and MUST define
+explicit acceptance criteria for empty, loading, success, and error states. Rationale: consistency
+improves learnability, trust, and task completion speed.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Responsive By Default
+All user-facing changes MUST be verified for both mobile and desktop breakpoints before merge.
+Layouts MUST adapt without content loss, horizontal scrolling, or inaccessible controls.
+Accessibility-critical interactions (navigation, forms, dialogs) MUST remain fully usable across
+target viewport classes. Rationale: responsive quality is a core product requirement, not a polish
+task.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Verifiable Delivery Gates
+Each specification, plan, and task set MUST include explicit quality, reuse, UX consistency, and
+responsiveness checks. A feature is not done until these checks are objectively verifiable through
+tests, reviews, or documented validation steps. Rationale: measurable gates prevent drift from
+principles under delivery pressure.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Implementation Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- Prefer cohesive modules with single responsibility and stable interfaces.
+- Require explicit trade-off notes for temporary shortcuts and track them as follow-up tasks.
+- Keep design and copy changes aligned with established product patterns unless a deliberate
+	redesign is approved.
+- Validate responsive behavior at representative mobile and desktop viewport sizes for every
+	user-visible change.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Delivery Workflow & Quality Gates
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Specification quality gates MUST define measurable acceptance criteria for code quality,
+	reusability, UX consistency, and responsive behavior.
+- Implementation plans MUST fail constitution checks if any required validation is missing.
+- Task breakdowns MUST include concrete validation tasks for automated quality checks, UX
+	consistency review, and mobile/desktop responsiveness verification.
+- Code review MUST block merges when constitutional gates are not met or not evidenced.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution overrides local conventions when conflicts occur. Amendments REQUIRE a documented
+proposal, an explicit impact assessment on templates, and approval from project maintainers.
+Versioning policy follows semantic intent: MAJOR for incompatible governance changes, MINOR for
+new principles/sections or materially expanded obligations, and PATCH for clarifications that do
+not change obligations. Compliance review is REQUIRED during planning, implementation, and pull
+request review; unresolved violations MUST be tracked and approved as explicit exceptions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-20 | **Last Amended**: 2026-04-20

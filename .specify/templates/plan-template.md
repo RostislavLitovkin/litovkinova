@@ -31,7 +31,13 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Code Quality Gate: Define lint, format, and test commands that MUST pass in CI before merge.
+- Reuse Gate: Identify existing modules/components to reuse and justify any new abstraction.
+- UX Consistency Gate: Document shared patterns/tokens and required states (loading, empty,
+  success, error) for user-facing flows.
+- Responsive Gate: Define mobile and desktop viewport validation approach for all changed screens.
+- Evidence Gate: List measurable proof (tests, screenshots, review checklist, QA notes) required
+  before marking feature complete.
 
 ## Project Structure
 
