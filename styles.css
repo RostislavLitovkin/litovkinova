@@ -176,6 +176,25 @@ h3 {
   margin-top: 0.2rem;
 }
 
+.notice {
+  margin-top: 2rem;
+  max-width: 62ch;
+  padding: 1.2rem 1.6rem;
+  border-left: 4px solid var(--accent);
+  background: var(--muted-bg);
+}
+
+.notice-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.notice-text {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
 .hero-actions {
   margin-top: 2.4rem;
   display: flex;
