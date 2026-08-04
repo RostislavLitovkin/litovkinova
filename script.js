@@ -17,6 +17,11 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item) => observer.observe(item));
 
+const notice = document.querySelector('.notice[data-hide-after]');
+if (notice && new Date() > new Date(`${notice.dataset.hideAfter}T23:59:59`)) {
+  notice.remove();
+}
+
 const yearTarget = document.getElementById('rok');
 if (yearTarget) {
   yearTarget.textContent = `Praha | ${new Date().getFullYear()}`;
